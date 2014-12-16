@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<style type="text/css">
+table
+  {
+    margin-right: auto;
+    margin-left: auto;
+  border-collapse:collapse;
+  }
+</style>
+</head>
+
+<body >
+<table class="largetable" >
+  <tr>
+    <td ><div id=demo style=overflow:hidden;height:400;width:706;color:#ffffff；>
+        <table align=left cellpadding=0 cellspace=0 border=0>
+          <tr>
+            <td id=demo1 valign=top> <table border=0 cellpadding=0 cellspacing=0>
+                <tr align="center">
+                  <td><a href="#" target="_blank"><img src=
+"img/1.jpg" width="700" height="400" hspace="3" border="0" align="absmiddle" onmouseover="mouseover(1)" onmouseout="mouseout()"></a></td>
+                  <td><a href="#" target="_blank"><img src=
+"img/2.jpg" width="700" height="400" hspace="3"  border="0" align="absmiddle" onmouseover="mouseover(2)" onmouseout="mouseout()"></a></td>
+                  <td><a href="#" target="_blank"><img src=
+"img/3.jpg" width="700" height="400"  hspace="3" border="0" align="absmiddle" onmouseover="mouseover(3)" onmouseout="mouseout()"></a></td>
+                  <td><a href="#" target="_blank"><img src=
+"img/4.jpg" width="700" height="400" hspace="3"  border="0" align="absmiddle" onmouseover="mouseover(4)" onmouseout="mouseout()"></a></td>
+                  <td><a href="#" target="_blank"><img src=
+"img/5.jpg" width="700" height="400" hspace="3"  border="0" align="absmiddle" onmouseover="mouseover(5)" onmouseout="mouseout()"></a></td>
+                  <td><a href="#" target="_blank"><img src=
+"img/6.jpg" width="700" height="400"  hspace="3" border="0" align="absmiddle" onmouseover="mouseover(6)" onmouseout="mouseout()"></a></td>
+                  <td><a href="#" target="_blank"><img src=
+"img/7.jpg" width="700" height="400"  hspace="3" border="0" align="absmiddle" onmouseover="mouseover(7)" onmouseout="mouseout()"></a></td>
+
+</tr>
+              </table></td>
+            <td id=demo2 valign=top></td>
+          </tr>
+        </table>
+      </div></td>
+  </tr>
+</table>
+
+<table class="smalltable" >
+  	<tr>
+		<td id = leftarror width=32px>
+			<img id = leftarrorimg src="img/arrow_triangle-left_alt2.png" hspace="3" border="0" align="absmiddle" onmouseover="mouseoverleftarror()" onmouseout="mouseoutleftarror()" onClick="leftarrorclick()">
+		</td>
+    		<td ><div id=demo3 style=overflow:hidden;width:706;color:#ffffff；>
+        		<table align=left cellpadding=0 cellspace=0 border=0>
+          			<tr>
+            				<td id=demo4 valign=top> 
+						<table border=0 cellpadding=0 cellspacing=0>
+                					<tr align="center">
+                  						<td><a href="#" target="_blank"><img src=
+"img/1.jpg" width="100" height="40" hspace="3" border="0" align="absmiddle" onmouseover="mouseover(1)" onmouseout="mouseout()"></a></td>
+                  						<td><a href="#" target="_blank"><img src=
+"img/2.jpg" width="100" height="40" hspace="3"  border="0" align="absmiddle" onmouseover="mouseover(2)" onmouseout="mouseout()"></a></td>
+                 						<td><a href="#" target="_blank"><img src=
+"img/3.jpg" width="100" height="40"  hspace="3" border="0" align="absmiddle" onmouseover="mouseover(3)" onmouseout="mouseout()"></a></td>
+                  						<td><a href="#" target="_blank"><img src=
+"img/4.jpg" width="100" height="40" hspace="3"  border="0" align="absmiddle" onmouseover="mouseover(4)" onmouseout="mouseout()"></a></td>
+                  						<td><a href="#" target="_blank"><img src=
+"img/5.jpg" width="100" height="40" hspace="3"  border="0" align="absmiddle" onmouseover="mouseover(5)" onmouseout="mouseout()"></a></td>
+                  						<td><a href="#" target="_blank"><img src=
+"img/6.jpg" width="100" height="40"  hspace="3" border="0" align="absmiddle" onmouseover="mouseover(6)" onmouseout="mouseout()"></a></td>
+                  						<td><a href="#" target="_blank"><img src=
+"img/7.jpg" width="100" height="40"  hspace="3" border="0" align="absmiddle" onmouseover="mouseover(7)" onmouseout="mouseout()"></a></td>
+
+							</tr>
+              					</table>
+					</td>
+            
+          			</tr>
+        		</table>
+      		</div></td>
+		<td id = rightarror width=32px>
+			<img id = rightarrorimg src="img/arrow_triangle-right_alt2.png" hspace="3" border="0" align="absmiddle" onmouseover="mouseoverrightarror()" onmouseout="mouseoutrightarror()" onClick="rightarrorclick()">
+		</td>
+  	</tr>
+</table>
+
+      <script>
+
+	demo.scrollLeft=0
+	var wait=0
+	var mymar1
+  	var speed=20
+  	demo2.innerHTML=demo1.innerHTML
+  	var MyMar=setInterval(change,10000)
+	var demo1OrDemo2 = 0
+	function change(){
+		clearInterval(MyMar)
+		demo1OrDemo2=1
+		mymar1=setInterval(Marquee,speed)
+	}
+  	function Marquee(){
+		if(wait==706){
+			wait=0
+			MyMar=setInterval(change,10000)
+			demo1OrDemo2=0
+			clearInterval(mymar1)
+		}
+		else{
+			wait++
+  			if(demo1.offsetWidth<=demo.scrollLeft)
+  				demo.scrollLeft=0
+  			else{
+  				demo.scrollLeft++
+  			}
+		}
+	}
+	var largetableposition=0;
+	function mouseover(number){
+		largetableposition = demo.scrollLeft
+		demo.scrollLeft=706*(number-1)
+		if(demo1OrDemo2==1){
+			clearInterval(mymar1)
+		}
+	}
+	function mouseout(){
+		demo.scrollLeft=largetableposition
+		if(demo1OrDemo2==1){
+			mymar1=setInterval(Marquee,speed)
+		}
+	}
+	function mouseoverleftarror(){
+		leftarrorimg.src="img/arrow_triangle-left_alt.png"
+	}
+	function mouseoutleftarror(){
+		leftarrorimg.src="img/arrow_triangle-left_alt2.png"
+	}
+	function mouseoverrightarror(){
+		rightarrorimg.src="img/arrow_triangle-right_alt.png"
+		//demo11.scrollLeft=demo11.scrollLeft+6
+	}
+	function mouseoutrightarror(){
+		rightarrorimg.src="img/arrow_triangle-right_alt2.png"
+	}
+	function rightarrorclick(){
+		demo3.scrollLeft=demo3.scrollLeft+6
+	}
+	function leftarrorclick(){
+		demo3.scrollLeft=demo3.scrollLeft-6
+	}
+  </script> 
+</body>
+</html>
